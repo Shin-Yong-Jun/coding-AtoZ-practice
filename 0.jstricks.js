@@ -54,3 +54,84 @@ let participantName = undefined;
 const user = participantName || 'Guest';
 // console.log(user);
 
+// &&
+// flag가 true일 경우에만 실행
+let flag = true;
+const func = () => {
+  // console.log('hello');
+}
+flag && func();
+
+// 객체 병합에도 활용할수 있다.
+const makeCompany = (showAddress) => {
+  return {
+    name: 'Naver',
+    ...showAddress && {address: 'busan'}
+  }
+};
+
+// console.log(makeCompany(true));
+
+
+// 6. 구조분해 할당 사용하기
+// 객체에서 필요한 것만 꺼내 쓰는 것이 좋다.
+const personInfo = {
+  name: 'JunShinYong',
+  age: 25,
+  major: 'business',
+  givenName: 'ShinYong',
+  firstName: 'Jun',
+  company: "MorganStanley"
+};
+
+const {firstName, givenName} = personInfo;
+// console.log(personInfo.firstName, personInfo.givenName)
+
+// 객체 생성시 키 생략하기
+// 객체를 생성할 때 프로퍼티 키를 변수 이름으로 생략할 수 있다.
+const userName = 'JunShinYong';
+const age = 25;
+const major = 'business';
+const personStatus = {
+  userName,
+  age,
+  major
+}
+
+// console.log(personStatus);
+
+// 7. 비구조화 할당 사용하기
+// 함수에 객체를 넘길 경우, 필요한 것만 꺼내 쓸 수 있다.
+const newCompany = ({name, address, serviceName}) => {
+  return {
+    name,
+    address,
+    serviceName
+  }
+}
+
+// console.log(newCompany({name: 'beansellection', address: 'seoul', serviceName: 'coffee'}));
+
+
+// 8. 동적 속성 이름
+// ES6에 추가된 기능으로 객체의 키를 동적으로 생성할 수 있다.
+const nameKey = 'name';
+const emailKey = 'email';
+const userDetail = {
+  [nameKey]: 'JunShinYong',
+  [emailKey]: 'jesikah2@naver.com',
+}
+
+// console.log(userDetail);
+
+// 9. !! 연산자를 이용하여 Boolean 값으로 바꾸기
+// !! 연산자를 이용하여 0, null, 빈문자열, undefined, NaN을 false로 그 외에는 true로 변경할 수 있다.
+function check(variable) {
+  if(!!variable) {
+    console.log(variable);
+  } else {
+    console.log('잘못된 값');
+  }
+}
+
+check(NaN);
