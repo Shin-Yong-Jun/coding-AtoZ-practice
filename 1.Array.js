@@ -1,3 +1,5 @@
+//배열은 순차리스트라고도 한다.
+
 const arr1 = new Array();
 const arr2 = [];
 const arr3 = [1,2,3,4,5];
@@ -11,7 +13,7 @@ const arr5 = new Array(5).fill(5);
 const arr6 = Array.from(Array(5), function(v, k){
   return k+1;
 })
-console.log(arr6);
+// console.log(arr6);
 
 // -- 배열 원소 길이 length... 근데 length 조작 가능
 // 권장되는 방법은 아님.
@@ -63,23 +65,22 @@ console.log(arr11.slice(2,4));
 
 // splice 중간 원소를 삭제할 수 있음 매개변수 순서는 (시작 인덱스, 삭제할 원소개수, 추가할 원소값)
 const arr12 = [1,2,3,4,5,6];
-arr12.splice(2,0,3);
-arr12.splice(2,1);
+arr12.splice(2,2);
 console.log(arr12)
 
 
 // ======================================================= 배열 순회 함수!!
 
-const arr13 = [1,2,3,4,5,6];
+const arr13 = [1,2,3,4,5,6,7,8,9];
 
 // 기존방법
 // for(let i = 0; i<arr13.length; i+=1) {
 // }
 
 // // for of 방법
-// for(const i of arr13) {
-//   console.log(i);
-// }
+for(const i of arr13) {
+  console.log(i);
+}
 
 
 
